@@ -1,0 +1,1152 @@
+$Blue: hsl(246, 80%, 60%); //user
+$Light_red: hsl(15, 100%, 70%); //works
+$Soft_blue: hsl(195, 74%, 62%); // (play)
+$Light_red2: hsl(348, 100%, 68%); //(study)
+$Lime_green: hsl(145, 58%, 55%); //(exercise)
+$Violet: hsl(264, 64%, 52%); //(social)
+$Soft_orange: hsl(43, 84%, 65%); //(self care)
+
+$Very_dark_blue: hsl(226, 43%, 10%);
+$Dark_blue: hsl(235, 46%, 20%);
+$Desaturated_blue: hsl(234, 41%, 34%);
+$Pale_Blue: hsl(236, 100%, 87%);
+
+@media screen and (min-width: 1440px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: $Very_dark_blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    overflow: hidden;
+    .dashboard {
+      width: 1096px;
+      height: 515px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 24px;
+      .user {
+        &--section {
+          grid-column: 1 / span 1;
+          grid-row: 1 / span 2;
+          background-color: $Dark_blue;
+          border-radius: 20px;
+          &--top {
+            background-color: $Blue;
+            border-radius: 20px;
+            height: 70%;
+            padding-left: 30px;
+            padding-top: 31px;
+            .avatar {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              background-color: white;
+              margin-bottom: 20px;
+              transform-origin: left center;
+              transform: scale(0.8);
+              margin-bottom: 25px;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                padding: 3.5px;
+              }
+            }
+            .info {
+              p {
+                font-weight: 300;
+                color: $Pale_Blue;
+                line-height: 45px;
+              }
+              h1 {
+                font-weight: 300;
+                color: white;
+                font-size: 35px;
+              }
+            }
+          }
+          &--bottom {
+            padding-top: 28px;
+            padding-left: 30px;
+            ul {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              height: 105px;
+              list-style: none;
+              .link {
+                list-style: none;
+                color: $Pale_Blue;
+                font-size: 16.5px;
+                font-weight: 300;
+                transition: color 0.2s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  color: white !important;
+                  // très important car le code js impact mon hover sans le
+                  // mot clé important le pas de hover effect... cool !!
+                }
+              }
+            }
+          }
+        }
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        &--work {
+          grid-column: 2 / span 1;
+          grid-row: 1 / span 1;
+          background-color: $Light_red;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .current {
+              h1 {
+                font-weight: 200;
+                font-size: 54px;
+              }
+            }
+            .previous {
+              p {
+                font-weight: 400;
+                font-size: 15px;
+                color: $Pale_Blue;
+                span {
+                  color: $Pale_Blue;
+                }
+              }
+            }
+          }
+        }
+        &--play {
+          grid-column: 3 / span 1;
+          grid-row: 1 / span 1;
+          background-color: $Soft_blue;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .current {
+              h1 {
+                font-weight: 200;
+                font-size: 54px;
+              }
+            }
+            .previous {
+              p {
+                font-weight: 400;
+                font-size: 15px;
+                color: $Pale_Blue;
+                span {
+                  color: $Pale_Blue;
+                }
+              }
+            }
+          }
+        }
+        &--study {
+          grid-column: 4 / span 1;
+          grid-row: 1 / span 1;
+          background-color: $Light_red2;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .current {
+              h1 {
+                font-weight: 200;
+                font-size: 54px;
+              }
+            }
+            .previous {
+              p {
+                font-weight: 400;
+                font-size: 15px;
+                color: $Pale_Blue;
+                span {
+                  color: $Pale_Blue;
+                }
+              }
+            }
+          }
+        }
+        &--exercise {
+          grid-column: 2 / span 1;
+          grid-row: 2 / span 1;
+          background-color: $Lime_green;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: 0px;
+            right: 12px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .current {
+              h1 {
+                font-weight: 200;
+                font-size: 54px;
+              }
+            }
+            .previous {
+              p {
+                font-weight: 400;
+                font-size: 15px;
+                color: $Pale_Blue;
+                span {
+                  color: $Pale_Blue;
+                }
+              }
+            }
+          }
+        }
+        &--social {
+          grid-column: 3 / span 1;
+          grid-row: 2 / span 1;
+          background-color: $Violet;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .current {
+              h1 {
+                font-weight: 200;
+                font-size: 54px;
+              }
+            }
+            .previous {
+              p {
+                font-weight: 400;
+                font-size: 15px;
+                color: $Pale_Blue;
+                span {
+                  color: $Pale_Blue;
+                }
+              }
+            }
+          }
+        }
+        &--selfCare {
+          grid-column: 4 / span 1;
+          grid-row: 2 / span 1;
+          background-color: $Soft_orange;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .current {
+              h1 {
+                font-weight: 200;
+                font-size: 54px;
+              }
+            }
+            .previous {
+              p {
+                font-weight: 400;
+                font-size: 15px;
+                color: $Pale_Blue;
+                span {
+                  color: $Pale_Blue;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 375px) and (max-width: 1440px) {
+  body {
+    width: 100vw;
+    background-color: $Very_dark_blue;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 80px;
+    padding-bottom: 76px;
+
+    .dashboard {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      row-gap: 20px;
+      .user {
+        width: 100%;
+        &--section {
+          background-color: $Dark_blue;
+          border-radius: 20px;
+          height: 205px;
+          &--top {
+            background-color: $Blue;
+            border-radius: 20px;
+            height: 70%;
+            padding: 32px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .avatar {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              background-color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                padding: 1.4px;
+              }
+            }
+            .info {
+              p {
+                font-weight: 300;
+                color: $Pale_Blue;
+                font-family: "Rubik", sans-serif;
+              }
+              h1 {
+                color: white;
+                font-size: 28px;
+                font-weight: lighter;
+                font-family: "Rubik", sans-serif;
+              }
+            }
+          }
+          &--bottom {
+            padding-left: 20px;
+            height: 30%;
+            ul {
+              display: flex;
+              width: 100%;
+              height: 100%;
+              align-items: center;
+              justify-content: space-around;
+              list-style: none;
+              .link {
+                list-style: none;
+                color: $Pale_Blue;
+                font-size: 16.5px;
+                font-weight: 300;
+                transition: color 0.2s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  color: white !important;
+                  // très important car le code js impact mon hover sans le
+                  // mot clé important le pas de hover effect... cool !!
+                }
+              }
+            }
+          }
+        }
+      }
+      .card {
+        &--work {
+          background-color: $Light_red;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 165px;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .current {
+                h1 {
+                  font-weight: 200;
+                  font-size: 32px;
+                }
+              }
+              .previous {
+                position: relative;
+                p {
+                  font-weight: 400;
+                  font-size: 15px;
+                  color: $Pale_Blue;
+                  span {
+                    color: $Pale_Blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &--play {
+          background-color: $Soft_blue;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 165px;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .current {
+                h1 {
+                  font-weight: 200;
+                  font-size: 32px;
+                }
+              }
+              .previous {
+                position: relative;
+                p {
+                  font-weight: 400;
+                  font-size: 15px;
+                  color: $Pale_Blue;
+                  span {
+                    color: $Pale_Blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &--study {
+          background-color: $Light_red2;
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 165px;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .current {
+                h1 {
+                  font-weight: 200;
+                  font-size: 32px;
+                }
+              }
+              .previous {
+                position: relative;
+                p {
+                  font-weight: 400;
+                  font-size: 15px;
+                  color: $Pale_Blue;
+                  span {
+                    color: $Pale_Blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &--exercise {
+          background-color: $Lime_green;
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          height: 165px;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .current {
+                h1 {
+                  font-weight: 200;
+                  font-size: 32px;
+                }
+              }
+              .previous {
+                position: relative;
+                p {
+                  font-weight: 400;
+                  font-size: 15px;
+                  color: $Pale_Blue;
+                  span {
+                    color: $Pale_Blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &--social {
+          background-color: $Violet;
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          height: 165px;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 80px;
+            height: 80px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .current {
+                h1 {
+                  font-weight: 200;
+                  font-size: 32px;
+                }
+              }
+              .previous {
+                position: relative;
+                p {
+                  font-weight: 400;
+                  font-size: 15px;
+                  color: $Pale_Blue;
+                  span {
+                    color: $Pale_Blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &--selfCare {
+          background-color: $Soft_orange;
+          border-radius: 20px;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          height: 165px;
+          img {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            object-fit: contain;
+            width: 60px;
+            height: 60px;
+          }
+          &--info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 82%;
+            background-color: $Dark_blue;
+            border-radius: 20px 20px 0px 0px;
+            cursor: pointer;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-color 0.25s ease-in-out;
+            &:hover {
+              background-color: $Desaturated_blue;
+            }
+            .title {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              h2 {
+                font-size: 18px;
+                font-weight: 500;
+              }
+              .option {
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+                transition: all 0.5s ease-in;
+                span {
+                  width: 3px;
+                  height: 3px;
+                  background-color: $Pale_Blue;
+                  border-radius: 50%;
+                  margin: 0px 1.3px;
+                  padding: 2px;
+                }
+                &:hover {
+                  span {
+                    background-color: white;
+                  }
+                }
+              }
+            }
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .current {
+                h1 {
+                  font-weight: 200;
+                  font-size: 32px;
+                }
+              }
+              .previous {
+                position: relative;
+                p {
+                  font-weight: 400;
+                  font-size: 15px;
+                  color: $Pale_Blue;
+                  span {
+                    color: $Pale_Blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
